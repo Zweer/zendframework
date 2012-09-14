@@ -105,6 +105,7 @@ class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Ab
             }
 
             $matchedPath = $route->getMatchedPath();
+            $this->setMatchedPath(trim($this->getMatchedPath() . $separator . $matchedPath, '/'));
 
             if ($matchedPath !== null) {
                 $subPath     = substr($subPath, strlen($matchedPath));
