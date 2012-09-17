@@ -72,6 +72,7 @@ class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Ab
      */
     public function match($request, $partial = null)
     {
+        $request = clone($request);
         $path    = trim($request->getPathInfo(), self::URI_DELIMITER);
         $subPath = $path;
         $values  = array();
